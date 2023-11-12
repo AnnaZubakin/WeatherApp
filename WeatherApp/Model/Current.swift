@@ -23,7 +23,7 @@ struct Current: Codable {
     //  var pressureIn       : Double?
     //  var precipMm         : Int?
     //  var precipIn         : Int?
-    var humidity         : Int?
+    var humidity         : Double?
     //  var cloud            : Int?
     var feelslikeC       : Double?
     //  var feelslikeF       : Double?

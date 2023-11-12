@@ -29,7 +29,8 @@ class ViewController: UIViewController {
     
         override func viewDidLoad() {
             super.viewDidLoad()
-            enterCityLabel.text = "Please enter a City"
+            enterCityLabel.text = "Please enter a City name:"
+            weatherConditions.text = ""
 //            loadWeatherData()
         }
         
@@ -50,7 +51,7 @@ class ViewController: UIViewController {
                     self.currentWeather = value
                     self.updateUI()
                     case .failure(let error):
-                    self.weatherConditions.text = "City not found. Please enter a valid city name"
+                    self.weatherConditions.text = "City not found. Please enter a valid City name"
                     print(error)
                 }
             }
@@ -64,7 +65,7 @@ class ViewController: UIViewController {
                 weatherConditions.text = ""
                 return
             }
-                let weatherText = "Location: \(cityTextField.text ?? "")\nTemp: \(current.tempC ?? 0)°C\nWind Speed: \(current.windKph ?? 0) km/h"
+                let weatherText = "Location: \(cityTextField.text ?? "")\nTemperature: \(current.tempC ?? 0)°C\nFeels Like: \(current.feelslikeC ?? 0)°C\nWind Speed: \(current.windKph ?? 0) km/h\nWind Direction: \(current.windDir ?? "")\nHumidity: \(current.humidity ?? 0)%"
                 weatherConditions.text = weatherText
             }
         }
